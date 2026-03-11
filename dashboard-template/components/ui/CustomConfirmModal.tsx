@@ -64,7 +64,10 @@ const defaultIcons: Record<ConfirmModalType, React.ReactNode> = {
     success: <CheckCircleFilled />,
 };
 
-function getTypeColors(type: ConfirmModalType, token: any) {
+function getTypeColors(
+    type: ConfirmModalType,
+    token: ReturnType<typeof useToken>["token"]
+) {
     switch (type) {
         case "danger":
             return {
